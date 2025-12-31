@@ -1,0 +1,119 @@
+﻿/* Dashboard container */
+.print-dashboard {
+    background: #f6f8fb;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Title */
+.dashboard-title {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Table wrapper (陰影 + 圓角) */
+.table-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Table base */
+.print-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+    /* Header */
+    .print-table thead {
+        background: linear-gradient(90deg, #34495e, #2c3e50);
+        color: #ffffff;
+    }
+
+    .print-table th {
+        padding: 12px 10px;
+        text-align: left;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    /* Body */
+    .print-table td {
+        padding: 10px;
+        border-bottom: 1px solid #eef1f5;
+        color: #2c3e50;
+    }
+
+    /* Zebra striping */
+    .print-table tbody tr:nth-child(even) {
+        background: #f9fbfd;
+    }
+
+    /* Hover effect */
+    .print-table tbody tr:hover {
+        background: #eaf2ff;
+        transition: background 0.2s ease-in-out;
+    }
+
+/* Alignment helpers */
+.center {
+    text-align: center;
+}
+
+.time {
+    white-space: nowrap;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Printer & document */
+.printer-name {
+    font-weight: 600;
+}
+
+.document-name {
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Status colors (依實際 Status 名稱可再補) */
+.status-printing {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-spooling {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-error {
+    background: #fdecea;
+    color: #c62828;
+}
+
+.status-paused {
+    background: #ede7f6;
+    color: #5e35b1;
+}

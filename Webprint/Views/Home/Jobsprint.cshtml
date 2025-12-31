@@ -1,0 +1,50 @@
+﻿@model List<Webprint.Models.PrintJobInfo>
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white border-0 py-3">
+        <div class="d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-0 fw-semibold">列印佇列</h6>
+                <small class="text-muted">即時顯示印表機送印資訊</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-hover table-striped align-middle mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-nowrap">印表機名稱</th>
+                        <th>文件名稱</th>
+                        <th class="text-nowrap">列印狀態</th>
+                        <th class="text-nowrap text-end">總頁數</th>
+                        <th class="text-nowrap text-end">檔案大小</th>
+                        <th class="text-nowrap text-end">目前剩餘列印大小</th>
+                        <th class="text-nowrap">送印時間</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var job in Model)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@job.PrinterName</td>
+                            <td>
+                                <div class="text-truncate" style="max-width: 420px;">
+                                    @job.Document
+                                </div>
+                            </td>
+                            <td>@job.Status</td>
+                            <td class="text-end">@job.TotalPages</td>
+                            <td class="text-end">@job.Size</td>
+                            <td class="text-end">@job.currentSize</td>
+                            <td class="text-nowrap">@job.TimeSubmitted</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/autoRefresh.js"></script>
