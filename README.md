@@ -33,3 +33,24 @@
 {
   "printname": "altername"
 }
+```
+---
+## 🏷️ 如何抓取District.json檔案
+修改 **`web.config`的DistrictJsonPath標籤** ，更換成目前`DistrictJsonPath` 資料夾位置
+```xml
+<add key="DistrictJsonPath" value="C:\webprint\Scripts\District.json" />
+```
+---
+## 🏷️ 如何抓取Spool檔案大小
+修改 **`web.config`的spoolFilePath標籤** ，更換成目前印表機伺服器的Spool資料夾位置，此標籤用來擷取印表機Job所使用的Spool檔案大小使用
+```xml
+<add key="spoolFilePath" value="C:\Windows\System32\spool\PRINTERS" />
+```
+---
+## 🏷️ 如何客製化Printer Job檔案名稱
+如需要客製化讀取Job列印檔案名稱可以修改 **`moduel/PrintJobInfo.cs`中的documentRegex** 
+```csharp
+string documentRegex = document.Split('_')[1]+"_"+document.Split('_')[3];
+```
+
+
