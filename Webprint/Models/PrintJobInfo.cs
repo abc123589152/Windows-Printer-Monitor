@@ -117,6 +117,7 @@ namespace Webprint.Models
                     {
                         currentProcessingSize = "等待中/無法取得";
                     }
+                    // 重新組合文件名稱
                     string documentRegex = document.Split('_')[1]+"_"+document.Split('_')[3];
                     string size = getSpoolSize.Calculator(spoolFilePath, printName[1].ToString());
                     list.Add(new PrintJobInfo
